@@ -61,7 +61,7 @@
     <a href="#AUTHOR">AUTHOR</a>
     <a href="#REPORTING-BUGS">REPORTING BUGS</a>
     <a href="#SEE-ALSO">SEE ALSO</a>
-    </div>
+  </div>
 
   <ol class='man-decor man-head man head'>
     <li class='tl'>git-ignore(1)</li>
@@ -76,7 +76,7 @@
 
 <h2 id="SYNOPSIS">SYNOPSIS</h2>
 
-<p><code>git-ignore</code> [&lt;pattern&gt;...]</p>
+<p><code>git-ignore</code> [&lt;pattern&gt;...] [--apply]</p>
 
 <h2 id="DESCRIPTION">DESCRIPTION</h2>
 
@@ -100,6 +100,14 @@
 build
 *.o
 *.log 
+</code></pre>
+
+<p> Running <code>git-ignore --apply</code> will <code>git rm --cached</code> all files that are currently
+ tracked in the repostiory and match the patterns in <em>.gitignore</em>:</p>
+
+<pre><code>$ git ignore --apply
+rm 'bar.log'
+rm 'foo.log'
 </code></pre>
 
 <h2 id="AUTHOR">AUTHOR</h2>

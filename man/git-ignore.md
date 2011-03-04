@@ -3,7 +3,7 @@ git-ignore(1) -- Add .gitignore patterns
 
 ## SYNOPSIS
 
-`git-ignore` [&lt;pattern&gt;...]
+`git-ignore` [&lt;pattern&gt;...] [--apply]
 
 ## DESCRIPTION
 
@@ -25,7 +25,14 @@ Adds the given _pattern_s to a gitignore file.
     $ git ignore
     build
     *.o
-    *.log 
+    *.log
+
+ Running `git-ignore --apply` will `git rm --cached` all files that are currently
+ tracked in the repostiory and match the patterns in _.gitignore_:
+
+    $ git ignore --apply
+    rm 'bar.log'
+    rm 'foo.log'
 
 ## AUTHOR
 

@@ -7,7 +7,7 @@
 \fBgit\-ignore\fR \- Add \.gitignore patterns
 .
 .SH "SYNOPSIS"
-\fBgit\-ignore\fR [<pattern>\|\.\|\.\|\.]
+\fBgit\-ignore\fR [<pattern>\|\.\|\.\|\.] [\-\-apply]
 .
 .SH "DESCRIPTION"
 Adds the given _pattern_s to a gitignore file\.
@@ -41,6 +41,21 @@ $ git ignore
 build
 *\.o
 *\.log
+.
+.fi
+.
+.IP "" 0
+.
+.P
+Running \fBgit\-ignore \-\-apply\fR will \fBgit rm \-\-cached\fR all files that are currently tracked in the repostiory and match the patterns in \fI\.gitignore\fR:
+.
+.IP "" 4
+.
+.nf
+
+$ git ignore \-\-apply
+rm \'bar\.log\'
+rm \'foo\.log\'
 .
 .fi
 .
